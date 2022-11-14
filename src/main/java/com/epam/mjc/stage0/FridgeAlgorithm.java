@@ -1,6 +1,7 @@
 package com.epam.mjc.stage0;
 
 import com.epam.mjc.stage0.utils.Fridge;
+import java.util.LinkedList;
 
 public class FridgeAlgorithm {
 
@@ -11,8 +12,8 @@ public class FridgeAlgorithm {
      * P.S All methods of interaction with the fridge can be found inside the {@see Fridge} class.
      */
     public void fridgeAlgorithm(Fridge fridge) {
-        FridgeIml.open(fridge);
-        FridgeIml.getMilk(fridge);
-        FridgeIml.close(fridge);;
+        Fridge.open(fridge);
+        Fridge.getMilk(fridge);
+        Fridge.close(fridge);;
     }
 }
