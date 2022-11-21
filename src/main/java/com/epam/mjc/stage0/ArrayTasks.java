@@ -106,6 +106,9 @@ public class ArrayTasks {
     public int[] getOnlyPositiveNumbers(int[] arr) {
         int count = 0;
 
+        int c = 0;
+
+
         for (int x = 0; x <arr.length; x++) {
             if (arr[x] > 0) {
                 count++;
@@ -115,15 +118,11 @@ public class ArrayTasks {
         int[] arr2 = new int[count];
 
         for(int i = 0; i < arr.length; i++) {
-
-            for(int j = 0; j < arr2.length; j++) {
-                if(arr[i] > 0) {
-                    arr2[j] = arr[i];
-                }
-
+            if(arr[i] > 0) {
+                arr2[c] = arr[i];
+                c++;
             }
-        }
-        return arr2;
+        }        return arr2;
     }
 
     /**
@@ -147,14 +146,14 @@ public class ArrayTasks {
                 }
             }
 
-            for (int k = 0; k < arr.length-1; k++) {
-                int[] temp2 = new int[arr[k].length];
-                temp2 = arr[k];
-                if(arr[k].length > arr[k+1].length) {
-                    arr[k] = arr[k+1];
-                    arr[k+1] = temp2;
-                }
+        for (int k = 0; k < arr.length-1; k++) {
+            int[][] temp2 = new int[arr[k].length][];
+            temp2[k] = arr[k];
+            if(arr[k].length > arr[k+1].length) {
+                arr[k] = arr[k+1];
+                arr[k+1] = temp2[k];
             }
+        }
             return arr;
     }
 }
